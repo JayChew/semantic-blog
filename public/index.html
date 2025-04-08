@@ -8,17 +8,17 @@
   <meta name="keywords" content="HTML5, SEO, Web Development, Blog">
   <meta property="og:title" content="Semantic Blog - Home">
   <meta property="og:description" content="Welcome to the Semantic Blog">
-  <title>Semantic Blog - Home</title>
-  <link rel="stylesheet" href="assets/styles.css">
+  <title>Semantic Blog</title>
+  <link rel="stylesheet" href="../assets/css/styles.css">
 </head>
 
 <body>
   <header>
     <nav aria-label="Main navigation">
       <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/about">About</a></li>
-        <li><a href="/contact">Contact</a></li>
+        <li><a href="index.html" aria-current="page">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
   </header>
@@ -35,11 +35,11 @@
       </section>
     </article>
 
-    <section id="latest-posts">
-      <h2>Latest Blog Posts</h2>
+    <section id="latest-posts" aria-labelledby="latest-articles">
+      <h2>Latest Articles</h2>
       <article>
         <header>
-          <h3><a href="/blog-post-1">Understanding HTML5 Semantic Tags</a></h3>
+          <h3><a href="post.html">Understanding HTML5 Semantic Tags</a></h3>
           <p>Posted on <time datetime="2025-04-06">April 6, 2025</time></p>
         </header>
         <section>
@@ -49,7 +49,7 @@
 
       <article>
         <header>
-          <h3><a href="/blog-post-2">How to Improve SEO with Structured Data</a></h3>
+          <h3><a href="post.html">How to Improve SEO with Structured Data</a></h3>
           <p>Posted on <time datetime="2025-04-05">April 5, 2025</time></p>
         </header>
         <section>
@@ -62,7 +62,7 @@
   <footer>
     <p>&copy; 2025 Semantic Blog. All Rights Reserved.</p>
   </footer>
-  <script src="assets/script.js"></script>
+  <script src="../scripts/main.js"></script>
 </body>
 
 </html>
