@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Get in touch with the Semantic Blog team." />
+  <title>Contact – Semantic Blog</title>
+  <link rel="stylesheet" href="/assets/css/styles.css" />
+</head>
+<body>
+  <header>
+    <h1>Semantic Blog</h1>
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/about/">About</a></li>
+        <li><a href="/contact/">Contact</a></li>
+      </ul>
+    </nav>
+    <button id="theme-toggle" aria-label="Toggle Dark Mode">🌙</button>
+  </header>
+
+  <main>
+    <section aria-labelledby="contact-form">
+ <h2 id="contact-form">Contact Us</h2>
+ <form aria-label="Contact Form">
+    <div>
+      <label for="name">Name:</label>
+      <input id="name" name="name" type="text" required aria-required="true" />
+    </div>
+    <div>
+      <label for="email">Email:</label>
+      <input id="email" name="email" type="email" required aria-required="true" />
+    </div>
+    <div>
+      <label for="message">Message:</label>
+      <textarea id="message" name="message" required aria-required="true"></textarea>
+    </div>
+    <button type="submit">Send Message</button>
+  </form>
+</section>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Semantic Blog. All rights reserved.</p>
+  </footer>
+
+  <script src="/scripts/main.js"></script>
+</body>
+</html>
