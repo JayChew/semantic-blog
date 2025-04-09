@@ -1,29 +1,27 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const toggleButton = document.createElement('button');
-  toggleButton.textContent = 'Toggle Theme';
-  toggleButton.style.position = 'fixed';
-  toggleButton.style.top = '10px';
-  toggleButton.style.right = '10px';
-  toggleButton.style.padding = '10px';
-  toggleButton.style.cursor = 'pointer';
+  const themeToggle = document.getElementById('theme-toggle');
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const savedTheme = localStorage.getItem('theme');
 
-  // Append the button to the body
-  document.body.appendChild(toggleButton);
-
-  // Check if the theme preference is stored in localStorage
-  if (localStorage.getItem('theme') === 'dark') {
-    document.body.classList.add('dark-theme');
+  if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+    document.documentElement.classList.add('dark');
   }
 
-  // Event listener to toggle between light and dark themes
-  toggleButton.addEventListener('click', () => {
-    document.body.classList.toggle('dark-theme');
-
-    // Store the theme preference in localStorage
-    if (document.body.classList.contains('dark-theme')) {
-      localStorage.setItem('theme', 'dark');
-    } else {
-      localStorage.setItem('theme', 'light');
-    }
+  themeToggle?.addEventListener('click', () => {
+    document.documentElement.classList.toggle('dark');
+    const isDark = document.documentElement.classList.contains('dark');
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
   });
 });
+
+const filterInput = document.getElementById('filter');
+if (filterInput) {
+  filterInput.addEventListener('input', () => {
+    const filterText = filterInput.value.toLowerCase();
+    document.querySelectorAll('article').forEach((post) => {
+      const title = post.querySelector('h2')?.textContent.toLowerCase() || '';
+      const body = post.textContent.toLowerCase();
+      post.style.display = title.includes(filterText) || body.includes(filterText) ? '' : 'none';
+    });
+  });
+}

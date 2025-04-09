@@ -5,36 +5,91 @@
   box-sizing: border-box;
 }
 
+:root {
+  --primary-color: #0066cc;
+  --font-stack: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
 body {
-  font-family: Arial, sans-serif;
+  font-family: var(--font-stack);
   line-height: 1.6;
   background-color: #f4f4f4;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-header {
-  background-color: #333;
+header,
+footer {
+  background: var(--primary-color);
   color: white;
   padding: 1rem;
+  text-align: center;
 }
 
-header nav ul {
-  list-style-type: none;
+nav {
+  position: relative;
+}
+
+/* Position the toggle button in the top right */
+#theme-toggle {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  z-index: 1000;
+  padding: 6px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+nav ul {
   display: flex;
   justify-content: center;
+  gap: 1rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
-header nav ul li {
+nav ul li {
   margin: 0 15px;
 }
 
-header nav ul li a {
+nav a {
   color: white;
   text-decoration: none;
 }
 
+nav a[aria-current="page"] {
+  border-bottom: 2px solid white;
+}
+
 main {
+  max-width: 800px;
+  margin: 2rem auto;
+  background: white;
   padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+form > div {
+  margin-bottom: 1rem;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 0.6rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  padding: 0.7rem 1.2rem;
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 h1,
@@ -50,35 +105,35 @@ h3 {
   padding: 1rem;
 }
 
-footer {
-  text-align: center;
-  padding: 1rem;
-  background-color: #333;
-  color: white;
+html.dark {
+  background: #111;
+  color: #eee;
 }
 
-.dark-theme {
-  background-color: #333;
-  color: white;
+html.dark header,
+html.dark footer {
+  background: #222;
+  color: #eee;
 }
 
-.dark-theme header {
-  background-color: #222;
+html.dark a {
+  color: #99ccff;
 }
 
-.dark-theme footer {
-  background-color: #222;
+html.dark main {
+  background: #1e1e1e;
+  box-shadow: none;
 }
 
-.dark-theme #latest-posts article {
-  background-color: #444;
-  border: 1px solid #555;
+html.dark #latest-posts section {
+  color: black;
 }
 
 @media (max-width: 768px) {
-  header nav ul {
+  nav ul {
     flex-direction: column;
     align-items: center;
+    gap: 0.5rem;
   }
 
   main {
@@ -96,7 +151,7 @@ footer {
 
 /* Very Small Devices (e.g., Phones) */
 @media (max-width: 480px) {
-  header nav ul li {
+  nav ul li {
     margin: 10px 0;
   }
 

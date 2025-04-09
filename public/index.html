@@ -14,6 +14,7 @@
 
 <body>
   <header>
+    <h1>Semantic Blog</h1>
     <nav aria-label="Main navigation">
       <ul>
         <li><a href="index.html" aria-current="page">Home</a></li>
@@ -21,6 +22,7 @@
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
+    <button id="theme-toggle" aria-label="Toggle Dark Mode">🌙</button>
   </header>
 
   <main>
@@ -37,6 +39,7 @@
 
     <section id="latest-posts" aria-labelledby="latest-articles">
       <h2>Latest Articles</h2>
+
       <article>
         <header>
           <h3><a href="post.html">Understanding HTML5 Semantic Tags</a></h3>
@@ -57,6 +60,9 @@
         </section>
       </article>
     </section>
+
+    <label for="filter">Filter Posts:</label>
+    <input type="text" id="filter" placeholder="Type a keyword..." />
   </main>
 
   <footer>
