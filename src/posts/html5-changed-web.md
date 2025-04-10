@@ -2,6 +2,7 @@
 layout: layout.njk
 title: How HTML5 Changed the Web
 description: Explore how HTML5 changed the web and modern web development practices.
+date: 2024-04-08
 ---
 
 <article>
@@ -14,3 +15,14 @@ description: Explore how HTML5 changed the web and modern web development practi
     <p>Tags like <code>&lt;section&gt;</code> help screen readers...</p>
   </section>
 </article>
+
+<details>
+  <summary>Example in Markdown</summary>
+  <pre>
+    ```js
+    function greet(name) {
+      return `Hello, ${name}!`;
+    }
+    ```
+  </pre>
+</details>

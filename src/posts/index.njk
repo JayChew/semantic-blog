@@ -1,0 +1,31 @@
+---
+pagination:
+  data: collections.posts
+  size: 5
+  alias: posts
+  reverse: true
+permalink: "{% if pagination.pageNumber == 0 %}posts/{% else %}posts/{{ pagination.pageNumber + 1 }}/{% endif %}"
+layout: layout.njk
+---
+<h1>Blog</h1>
+
+{% for post in posts %}
+  <article>
+    <h2><a href="{{ post.url }}">{{ post.data.title }}</a></h2>
+    <time datetime="{{ post.date | date('yyyy-MM-dd') }}">{{ post.date | date('yyyy-MM-dd') }}</time>
+    <p>{{ post.data.description }}</p>
+  </article>
+{% endfor %}
+
+<nav>
+  {% if pagination.href.previous %}
+    <a href="{{ pagination.href.previous }}">Previous</a>
+  {% else %}
+    <span>Previous</span> <!-- Disabled -->
+  {% endif %}
+  {% if pagination.href.next %}
+    <a href="{{ pagination.href.next }}">Next</a>
+  {% else %}
+    <span>Next</span> <!-- Disabled -->
+  {% endif %}
+</nav>

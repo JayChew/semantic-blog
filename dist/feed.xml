@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+<channel>
+  <title>Semantic Blog</title>
+  <link>https://semanticblog.netlify.app/</link>
+  <description>A feed of Semantic Blog's latest posts</description>
+  <language>en-us</language>
+  
+  <item>
+    <title>How HTML5 Changed the Web</title>
+    <link>https://semanticblog.netlify.app/posts/html5-changed-web/</link>
+    <description>Explore how HTML5 changed the web and modern web development practices.</description>
+    <pubDate>Mon, 08 Apr 2024 08:00:00 GMT</pubDate>
+    <guid>https://semanticblog.netlify.app/posts/html5-changed-web/</guid>
+  </item>
+  
+</channel>
+</rss>
